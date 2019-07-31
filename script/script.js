@@ -255,7 +255,10 @@ let appData = {
     },
     insertOnlyRussianLetter: function(){
         this.value = this.value.replace(/[^а-я]/,'');
-    }
+    },
+    reset: function(){
+        location.reload();
+    },
 };
 
 expensesPlus.addEventListener('click', appData.addExpensesBlock);
@@ -283,7 +286,7 @@ for(let i = 0; i < additionalIncomeItem.length; i++) {
     additionalIncomeItem[i].addEventListener('input', appData.insertOnlyRussianLetter);
 }
 
-
+buttonCancel.addEventListener('click', appData.reset);
 
 
 
